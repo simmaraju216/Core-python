@@ -46,3 +46,24 @@ def fun6(*a):
     print(sum(a[::2]))
     print(sum(a[1::2]))
 fun6(1,2,3,4,5,7,7,8,8,10)"""
+#______________________________________
+"""__________________Return statement_______"""
+"""def func(x,y):
+    return x+y
+print(func(20,30))"""
+"""#_________multiple return statements___________
+def func1(x,y):
+    if x>y:
+        return x
+    else:
+        return y
+print(func1(78,32))"""
+"""#________________________________
+def func2(*a):
+    s=sum(a)
+    if s&1==0:
+        return "even:",s
+    else:
+        return 'odd:',s
+print(*func2(1,7,8,6,5,3,2,8))"""
+#______________________________________
