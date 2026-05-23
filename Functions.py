@@ -67,3 +67,22 @@ def func2(*a):
         return 'odd:',s
 print(*func2(1,7,8,6,5,3,2,8))"""
 #______________________________________
+
+def orders(*items,**details):
+    print("items:",*items)
+    print("user details:",details)
+    global c
+    c=c+1
+    print("total no of orders",c)
+c=0
+orders("pizza","Burger",name='yaswanth',destination='cvcorp')
+orders("pizza","Burger",name='krishna',destination='cvcorp')
+
+"""def orders(*items,**details):
+    print(f"items:{items}")
+    print(f"user details:{details}")
+    global c
+    c=c+1
+    print("total no of orders",c)
+c=0
+orders("pizza","Burger",name='nena',destination='cvcorp')"""
