@@ -44,3 +44,34 @@ l=[66,67,68,69,70]
 m=list(map(lambda x:x+4,l))
 k=list(map(chr,m))
 print(*k)"""
+"""
+l=[[1,2],[3,4],[5,6]]
+k=list(map(lambda x:x+[5],l)) # it uses new address to modify i mean new variable(k)
+print(l)     # [[1, 2], [3, 4], [5, 6]]
+print(k)     #[[1, 2, 5], [3, 4, 5], [5, 6, 5]]
+m=list(map(lambda x:x.append(5),l))# here existed list (l) is modified
+print(l)   #[[1, 2, 5], [3, 4, 5], [5, 6, 5]]
+print(m)    #[None, None, None]
+
+"""
+"""#_______using map_________
+l=[1,2,3,4,5,6,7,8]
+m=list(map(lambda x:x%2==0,l))
+print(m)  # [False, True, False, True, False, True, False, True]"""
+#________filtre()__________________
+"""l=[1,2,3,4,5,6,7,8]
+m=list(filter(lambda x:x%2==0,l))
+print(m) # [2, 4, 6, 8]
+"""
+"""l=[1,2,3,4,5,6,7,8]
+m=list(filter(lambda x:x%2,l))
+print(m)  #  [1, 3, 5, 7]
+"""
+"""l=[3,6,1,2,5,9,12,16]
+m=list(filter(lambda x:x%3,l))
+print(m) # [1, 2, 5, 16]"""
+
+"""# to remove vowels from string
+s="Hello"
+m=list(filter(lambda x:x not in "AEIOUaeiou",s))
+print(m) #['H', 'l', 'l']"""
