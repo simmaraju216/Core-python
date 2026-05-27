@@ -75,3 +75,29 @@ print(m) # [1, 2, 5, 16]"""
 s="Hello"
 m=list(filter(lambda x:x not in "AEIOUaeiou",s))
 print(m) #['H', 'l', 'l']"""
+#_____________27-5-26_______________
+"""l=[1,7,8,12,14,21,22,63,66]
+m=list(map(lambda x:x**3,l))
+k=list(filter(lambda x:x%4,m))
+print(k)
+#_________________or____________________
+m=list(filter(lambda x:x%4,map(lambda x:x**3,l)))
+print(m)"""
+
+#_________reduce()_______________
+# __syntax_________
+#_reduce(2 peramaters,iterabe value,initial value(optional))
+from functools import reduce
+"""l=[1,7,8,12,14,21,22,63,66]
+m=reduce(lambda x,y:x+y,l)
+print(m)"""
+"""l=[1,7,6,3,8,9,11,10]
+m=reduce(lambda x,y:x if x>y else y,l)
+print(m)"""
+from functools import reduce
+c=[0,22,31,35,23]
+m=list(map(lambda x:(x*9/5)+32,c))
+k=list(filter(lambda x:x%3==0,m))
+l=reduce(lambda x,y:x+y,k,'')
+print(l)
+
