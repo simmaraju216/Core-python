@@ -94,10 +94,12 @@ print(m)"""
 """l=[1,7,6,3,8,9,11,10]
 m=reduce(lambda x,y:x if x>y else y,l)
 print(m)"""
-from functools import reduce
-c=[0,22,31,35,23]
-m=list(map(lambda x:(x*9/5)+32,c))
-k=list(filter(lambda x:x%3==0,m))
-l=reduce(lambda x,y:x+y,k,'')
-print(l)
-
+# from functools import reduce
+# c=[0,22,31,35,23]
+# m=list(map(lambda x:(x*9/5)+32,c))
+# k=list(filter(lambda x:x%3==0,m))
+# l=reduce(lambda x,y:x+y,k,'@')
+# print(l)
+# l=[23,21,28,44,46]
+# a=sorted(l,key=lambda x:x%7,reverse=True)
+# print(a)
