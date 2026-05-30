@@ -63,3 +63,8 @@
 # print(substract(3,10))
 
 #________________practice section4____________
+def send_email(to,subjet,body):
+    print(to)
+    print(subjet)
+    print(body)
+send_email(to='Chiru',body='''Udemy is a US-based education technology company.''' ,subjet= 'Good Morning')
