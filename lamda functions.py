@@ -88,9 +88,9 @@ print(m)"""
 # __syntax_________
 #_reduce(2 peramaters,iterabe value,initial value(optional))
 from functools import reduce
-"""l=[1,7,8,12,14,21,22,63,66]
+l=[1,7,8,12,14,21,22,63,66]
 m=reduce(lambda x,y:x+y,l)
-print(m)"""
+print(m)
 """l=[1,7,6,3,8,9,11,10]
 m=reduce(lambda x,y:x if x>y else y,l)
 print(m)"""
