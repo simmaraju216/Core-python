@@ -12,27 +12,27 @@
 #
 # Register("Pavan","markapur",20,'Male','pavan@gmail.com','+91-9014432634')
 
-# def apply(func, value):
-#     return func(value)
-#
-#
-# def double(x):
-#     return x * 2
-#
-#
-# def square(x):
-#     return x * x
-#
-#
-# a=apply(double, 5)
-# print(a)# 10
-# print(apply(square, 5))
+def apply(func, value):
+    return func(value)
 
-def fun(x,y):
-    z=[1,2,3]
-    def fun2(a,b):
-        print( a*y)
-        print(b,z,sep='\n')
-    return fun2
-k=fun(20,40)
-k(20,10)
+
+def double(x):
+    return x * 2
+
+
+def square(x):
+    return x * x
+
+
+a=apply(double, 5)
+print(a)# 10
+print(apply(square, 5))
+
+# def fun(x,y):
+#     z=[1,2,3]
+#     def fun2(a,b):
+#         print( a*y)
+#         print(b,z,sep='\n')
+#     return fun2
+# k=fun(20,40)
+# k(20,10)

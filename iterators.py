@@ -18,10 +18,12 @@
 #     def __iter__(self):
 #         return self
 #     def __next__(self):
-#         if self .start<=self.end:
-#             self.start+=1
-#             return self.start
-#     # raise stopiteration
+#         if self .start>self.end:
+#             raise StopIteration
+#         v=self.start
+#         self.start+=1
+#         return v
+#
 # b1=B(10,20)
 # k=iter(b1)
 # print(next(k))
@@ -35,6 +37,9 @@
 # print(next(k))
 # print(next(k))
 # print(next(k))
+# # __________or ______________
+# for i in b1:
+#     print(i)
 
 
 
@@ -135,3 +140,61 @@
 #
 # for i in e1:
 #     print(i)
+#
+# class EvenNumbers:
+#     def __init__(self,start, count):
+#         self.start=start
+#         self.count=count
+#     def __iter__(self):
+#         return self
+#     def __next__(self):
+#         while( self.start<self.count):
+#             v=self.start
+#             self.start+=1
+#             if v%2==0:
+#                 return v
+#         raise StopIteration
+# even=EvenNumbers(1,20)
+# k=iter(even)
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# # for i in even:
+# #     print(i)
+
+class Countdown:
+    def __init__(self,n):
+        self.n=n
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self.n<=0:
+            raise StopIteration
+        v=self.n
+        self.n-=1
+        return v
+c=Countdown(10)
+k=iter(c)
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+# print(next(k))
+try:
+    while True:
+        print(next(k))
+except StopIteration:
+    print("Done")

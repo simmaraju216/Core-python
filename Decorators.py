@@ -1,28 +1,34 @@
 # def fun(x):
-#     def inner():
+#     def inner(*args,**kwargs):
+#         x(*args,**kwargs)
 #         print('hello')
 #     return inner
+# # @fun
+# # def fun3():
+# #     print('hii')
+# # fun3()
 # @fun
-# def fun3():
-#     print('hii')
-# fun3()
+# def fun2(y):
+#     print(y+5)
+# fun2(10)
+
 # import functools
 
 
-# def dec(func):
-#     print('fun called')
-#     def inner():
-#         print('starting fun')
-#         print(f'func:{func.__name__}')
-#         func()
-#         print('ending fun')
-#     return inner
-# @dec
-# def greet():
-#     print('hello')
-# greet()
-# print(f'greet:{greet.__name__}')
-#
+def dec(func):
+    print('fun called')
+    def inner():
+        print('starting fun')
+        print(f'func:{func.__name__}')
+        func()
+        print('ending fun')
+    return inner
+@dec
+def greet():
+    print('hello')
+greet()
+print(f'greet:{greet.__name__}')
+
 
 
 # def login(func):
@@ -171,27 +177,27 @@ import functools
 # get_status()
 # get_error()
 
-"""_________________________________________________"""
-def logger(func):
-    def wrapper():
-        print("Logger: Before function")
-        func()
-        print("Logger: After function")
-    return wrapper
-
-def repeat(n):
-    def decorator(func):
-        def wrapper():
-            for i in range(1,n+1):
-                print(f"Repeat {i}")
-                func()
-        return wrapper
-    return decorator
-@repeat(3)
-@logger
-def greet():
-    print("Hello")
-greet()
+# """_________________________________________________"""
+# def logger(func):
+#     def wrapper():
+#         print("Logger: Before function")
+#         func()
+#         print("Logger: After function")
+#     return wrapper
+#
+# def repeat(n):
+#     def decorator(func):
+#         def wrapper():
+#             for i in range(1,n+1):
+#                 print(f"Repeat {i}")
+#                 func()
+#         return wrapper
+#     return decorator
+# @repeat(3)
+# @logger
+# def greet():
+#     print("Hello")
+# greet()
 """_______________________________________"""
 # def count_calls(n):
 #     def dec(func):
