@@ -14,18 +14,17 @@ But sometimes we want an inner function to keep using those variables later.
 
 """
 # def outer():
-#
 #     a = 10
 #     b = 20
 #     c=20
 #     def inner():
-#        print(a + b+c)
+#        return (a+ b+c)
 #
 #     return inner
 #
 # f = outer()
 # print(f)  #f is simply a variable that stores the function object returned by outer()
-# # ,here f is the returned inner function object/address.
+# ,here f is the returned inner function object/address.
 # """
 # What is __closure__?
 #
@@ -108,5 +107,52 @@ def discount(percent):
     return inner
 a=discount(10)
 print(a(1000))
+"""
+
+Write a function bank_account(balance).
+
+-   The outer function receives the initial balance.
+-   The inner function receives an amount to withdraw.
+-   Print the remaining balance.
+-   Return the inner function.
+"""
+
+def bank_account(init_balance):
+    def inner(withdraw_amount):
+        return init_balance-withdraw_amount
+    return inner
+k=bank_account(5000)
+print(k(2000))
 
 
+"""
+Write a function movie(movie_name).
+
+-   The outer function stores the movie name.
+-   The inner function receives the person’s name.
+-   Print that the person booked a ticket for the movie.
+-   Return the inner function.
+"""
+
+def movie(movie_name):
+    def inner(persons_name):
+        return f"{persons_name} booked a ticket for {movie_name}"
+    return inner
+j=movie("kaleja")
+print(j("raju"))
+
+"""
+Write a function multiplier(number).
+
+-   The outer function receives one number.
+-   The inner function receives another number.
+-   Print their multiplication.
+-   Return the inner function
+"""
+
+def multiplier(number):
+    def inner(another_number):
+        return number*another_number
+    return inner
+l=multiplier(20)
+print(l(10))
