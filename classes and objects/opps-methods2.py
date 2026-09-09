@@ -49,7 +49,7 @@ i2.remove_item('mobile')
 
 
 
-
+"""--------------------------------------------"""
 class Employee:
     minimum_exp = 5
     def __init__(self,name,exp,dept):
@@ -96,7 +96,7 @@ e2.promotion()
 e3.change(20)
 e2.promotion()
 #
-#
+"""__________________________________________________"""
 class Mobile:
     total_apps = 0
     total_files = 0
@@ -163,7 +163,7 @@ m1 = Mobile()
 m1.install()
 
 
-
+"""__________________________________________"""
 class Student:
     # Class variables
     total_students = 0
@@ -231,7 +231,7 @@ s2.result()
 s3.result()
 
 
-
+"""______________________________"""
 class Product:
     # Class variable
     tax_rate = 18  # 18%
@@ -278,7 +278,7 @@ print(Product.is_valid_price(25000))     # True
 print(Product.is_valid_price(-100))      # False
 print(Product.is_valid_price(2000000))   # False
 
-
+"""__________________________________________"""
 class Loan:
     # Class variable (common for all loans)
     interest_rate = 10  # 10%
@@ -333,6 +333,7 @@ print("Salary = 25000:", Loan.check_eligibility(25000))
 print("Salary = 45000:", Loan.check_eligibility(45000))
 print("Salary = 60000:", Loan.check_eligibility(60000))
 
+"""___________________________________________"""
 
 class Course:
     # Class variables
