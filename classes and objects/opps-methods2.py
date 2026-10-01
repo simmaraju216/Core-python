@@ -405,7 +405,6 @@ Demonstrate:
 1.	Creating vehicles with different km and models.
 2.	Updating the service rate.
 3.	Showing charges and eligibility checks.
-
 """
 
 

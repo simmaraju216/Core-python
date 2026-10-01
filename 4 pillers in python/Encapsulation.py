@@ -7,7 +7,7 @@ Encapsulation: Encapsulation means keeping data and the methods that operate on 
 A. Data hiding
 Preventing or discouraging outside code from directly accessing internal data.
 
-B. Controlled access
+B. Controlled access  
 Providing methods or properties through which outside code can interact with that data.
 """
 """
@@ -435,3 +435,60 @@ deep     ──→ [ ──→ ["Laptop", "Mouse", "Monitor"] ]
 | Best use                          | When nested objects can safely be shared | When complete independence is required |
 """
 
+
+"""
+9. Implement a class incorrectly first: 
+• Attendance stored in a list 
+• Exposed directly so any outside code can modify it Then redesign properly: 
+• Make attendance private 
+• Provide controlled methods for marking attendance only Explain the difference. 
+"""
+"""
+Incorrect implementation
+"""
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.attendance = []
+
+    def mark_attendance(self, date):
+        self.attendance.append(date)
+
+
+student = Student("Raju")
+
+student.mark_attendance("2026-09-11")
+
+print(student.attendance)
+
+# Outside code can directly modify the list
+student.attendance.append("Invalid Date")
+student.attendance.clear()
+
+print(student.attendance)
+
+"""
+Proper implementation
+"""
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.__attendance = []
+
+    def mark_attendance(self, date):
+        if date not in self.__attendance:
+            self.__attendance.append(date)
+            print("Attendance marked")
+        else:
+            print("Attendance already marked")
+
+    def get_attendance(self):
+        return self.__attendance.copy()
+
+
+student = Student("Raju")
+
+student.mark_attendance("2026-09-11")
+student.mark_attendance("2026-09-11")
+
+print(student.get_attendance())

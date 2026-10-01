@@ -50,3 +50,85 @@ class Car:
         print("Igniting engine")
 car = Car()
 car.start()
+
+
+"""
+11. Using abc module: 
+• Create an abstract class Shape with area(), perimeter() 
+• Implement Circle, Rectangle, Triangle Demonstrate: 
+• why base class should NOT contain calculation logic 
+• what happens if a subclass fails to implement one of the methods 
+"""
+
+from abc import ABC, abstractmethod
+import math
+
+
+class Shape(ABC):
+
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass
+
+
+class Circle(Shape):
+
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return math.pi * self.radius ** 2
+
+    def perimeter(self):
+        return 2 * math.pi * self.radius
+
+
+class Rectangle(Shape):
+
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+    def perimeter(self):
+        return 2 * (self.length + self.width)
+
+
+class Triangle(Shape):
+
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+
+    def area(self):
+        # Heron's formula
+        s = (self.a + self.b + self.c) / 2
+        return math.sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))
+
+    def perimeter(self):
+        return self.a + self.b + self.c
+
+
+# Objects
+circle = Circle(5)
+rectangle = Rectangle(10, 5)
+triangle = Triangle(3, 4, 5)
+
+print("Circle")
+print("Area:", circle.area())
+print("Perimeter:", circle.perimeter())
+
+print("\nRectangle")
+print("Area:", rectangle.area())
+print("Perimeter:", rectangle.perimeter())
+
+print("\nTriangle")
+print("Area:", triangle.area())
+print("Perimeter:", triangle.perimeter())

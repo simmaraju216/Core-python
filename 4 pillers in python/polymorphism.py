@@ -22,7 +22,7 @@ A good answer is:
 
 Python does not support traditional method overloading like Java or C++. 
 If we define multiple methods with the same name, the latest definition replaces the previous one.
- However, we can achieve overloading-like behavior using default arguments, *args, **kwargs
+However, we can achieve overloading-like behavior using default arguments, *args, **kwargs
 """
 # class Calculator:
 #
@@ -34,13 +34,13 @@ If we define multiple methods with the same name, the latest definition replaces
 # obj = Calculator()
 #
 # print(obj.add(10, 20))
-
 """
 But We can achieve overloading-like behavior using:
 Default peremeters
 *args
 **kargs
 """
+
 class Calculator:
 
     def add(self, a, b=0, c=0):
@@ -209,21 +209,21 @@ operate(WashingMachine())
  • == operator → compare equality 
  Show how operator overloading gives natural polymorphism to user-defined classes. 
 """
-# class Vector:
-#     def __init__(self,a,b):
-#         self.a=a
-#         self.b=b
-#     def __add__(self, other):
-#         return Vector(self.a+other.a,self.b+other.b)
-#     def __eq__(self, other):
-#         return self.a==other.a and self.b==other.b
-#     def __str__(self):
-#         return f"{self.a},{self.b}"
-#
-# v1=Vector(12,14)
-# v2=Vector(15,20)
-# print(v1+v2)
-# print(v1==v2)
+class Vector:
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+    def __add__(self, other):
+        return Vector(self.a+other.a,self.b+other.b)
+    def __eq__(self, other):
+        return self.a==other.a and self.b==other.b
+    def __str__(self):
+        return f"{self.a},{self.b}"
+
+v1=Vector(12,14)
+v2=Vector(15,20)
+print(v1+v2)
+print(v1==v2)
 
 """
 Q4. Create a base class Transport with move()
@@ -317,12 +317,10 @@ class Sorter:
 class BS:
     def sort(self, data):
         arr = data.copy()
-
         for i in range(len(arr)):
             for j in range(0, len(arr) - i - 1):
                 if arr[j] > arr[j + 1]:
                     arr[j], arr[j + 1] = arr[j + 1], arr[j]
-
         return arr
 
 
@@ -432,7 +430,6 @@ class Circle:
 class Square:
     def draw(self):
         print("Drawing a Square")
-
 
 class Rectangle:
     def draw(self):
